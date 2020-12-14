@@ -7,8 +7,7 @@ source('scripts/setup.R')
 lapply(
   c('activity', 'suncalc', 'lubridate', 'tidyverse'),
   require,
-  character.only = TRUE
-)
+  character.only = TRUE)
 
 # Function to convert date_time to decimal hours:
 
@@ -185,7 +184,7 @@ purrr::map_dfr(
 # Save plot:
 
 ggsave(
-  'output/figure_4.png', 
+  'output/figures/figure_4.png', 
   width = 7.5, 
   height = 3.8, 
   units = 'in')
