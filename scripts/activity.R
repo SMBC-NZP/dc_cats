@@ -23,7 +23,7 @@ get_time_hours <-
 # Urban intensity, classified into low, medium, and high-intensity:
 
 urban_classes <-
-  read_csv('data/siteCovs.csv') %>%
+  read_csv('data/site_covs.csv') %>%
   transmute(
     site,
     urban_intensity =
