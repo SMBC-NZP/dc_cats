@@ -16,6 +16,7 @@ detection_functions <-
   c('halfnorm', 'hazard')
 
 phi_formulas <- '~1'
+
 p_formulas <- '~1'
 
 formula_frame <-
@@ -82,7 +83,6 @@ phi_p_mods_trans <-
         keyfun = formula_frame[x,]$detection_functions,
         mixture = 'NB',
         K = 50,
-        # starts = c(1.75, -2.62, 2.84),
         output = 'abund')
     }) %>%
   set_names(
@@ -247,3 +247,14 @@ hDem_mods_reduced_trans_density <-
 # Model selection table:
 
 aictab(hDem_mods_reduced_trans)
+
+
+# write model outputs for plotting predictions ----------------------------
+
+write_rds(
+  imp_mods_trans,
+  'output/models/imp_mods_trans.rds')
+
+write_rds(
+  hDem_mods_reduced_trans_density,
+  'output/models/imp_mods_reduced_trans.rds')

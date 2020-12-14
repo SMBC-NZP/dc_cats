@@ -150,3 +150,14 @@ hDem_mods_reduced_cam <-
 aictab(hDem_mods_reduced_cam)
 
 
+# write model outputs for plotting predictions ----------------------------
+
+write_rds(
+  imp_mods_cam,
+  'output/models/imp_mods_cam.rds')
+
+write_rds(
+  hDem_mods_reduced_cam,
+  'output/models/imp_mods_reduced_cam.rds')
+
+
