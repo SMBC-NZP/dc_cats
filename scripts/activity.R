@@ -36,7 +36,7 @@ urban_classes <-
 # Camera trap detections:
 
 detections <-
-  read_csv('data/cam_detections_dt.csv') %>% 
+  read_csv('data/cam_detections.csv') %>% 
   transmute(
     site,
     cat,
