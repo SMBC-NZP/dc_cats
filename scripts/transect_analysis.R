@@ -256,5 +256,9 @@ write_rds(
   'output/models/imp_mods_trans.rds')
 
 write_rds(
+  hDem_mods_reduced_trans,
+  'output/models/hDem_mods_reduced_trans.rds')
+
+write_rds(
   hDem_mods_reduced_trans_density,
-  'output/models/imp_mods_reduced_trans.rds')
+  'output/models/hDem_mods_reduced_tran_density.rds')
