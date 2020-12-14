@@ -1,3 +1,5 @@
+# This script was used to generate sampling times for each site.
+
 library(tidyverse)
 
 # Get sites:
