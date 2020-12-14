@@ -73,7 +73,7 @@ cam_time_transformed <-
   # Join sunrise and sunset times:
   left_join(sunrise_sunset, by = 'date') %>%
   # Join site-level urban intensity:
-  left_join(urban_intensity, by = 'site') %>% 
+  left_join(urban_classes, by = 'site') %>% 
   # Subset to observations greater than 30 minutes apart:
   filter(
     !(difftime(date_time, lag(date_time), 'minutes') < 30 &
@@ -161,7 +161,7 @@ purrr::map_dfr(
         y = y, 
         color = `Urban Intensity`,
         fill = `Urban Intensity`)) + 
-  geom_line(size = 1) +
+  geom_line(size = 0.75) +
   geom_area(
     position = 'identity',
     alpha = 0.3,
@@ -181,6 +181,14 @@ purrr::map_dfr(
     y = 'Density') +
   theme_bw() +
   plot_theme()
+
+# Save plot:
+
+ggsave(
+  'output/figure_4.png', 
+  width = 7.5, 
+  height = 3.8, 
+  units = 'in')
 
 # compare day vs night ----------------------------------------------------
 
