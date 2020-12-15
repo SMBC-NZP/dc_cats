@@ -140,7 +140,7 @@ color_blind_palette <-
     'Medium' = '#E69F00',
     'High' = 'red')
 
-# Plot distributions (Figure 4):
+# Plot distributions (Figure 5):
 
 purrr::map_dfr(
   names(fit_list),

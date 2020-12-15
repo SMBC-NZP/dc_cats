@@ -35,20 +35,6 @@ unscaleVar_new <-
     sd(var, na.rm = TRUE)*newVar_scaled + mean(var, na.rm = TRUE)
   }
 
-# Function that scales and transposes detection covariates to wide format:
-
-transposeCovariate <-
-  function(data, covariate) {
-    transMat <- data %>%
-      select(site, visit, cov = covariate) %>%
-      mutate(cov = scaleVar(cov)) %>%
-      spread(visit, cov) %>%
-      select(-site) %>%
-      as.matrix()
-    colnames(transMat) <- NULL
-    return(transMat)
-  }
-
 # Plot theme to be used across output:
 
 plot_theme <-
