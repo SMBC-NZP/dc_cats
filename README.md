@@ -9,7 +9,6 @@ Free-ranging domestic cats are a detriment to wildlife and humans by preying on 
 ## Files
 
 ### ~/data
-
 - cam_detections.csv: The location and date-time of camera trap detections
 - camera_observation_covs.csv: Weather and site data associated with camera sampling events (<i>Note: All weather data were obtained from Weather Underground using the nearest weather station to a given site</i>)
 - imp_DC.grd & imp_DC.gri: raster data of impervious surface for Greater Washington D.C. (<i>Note: Data were derived from https://www.mrlc.gov/</i>)
@@ -17,6 +16,10 @@ Free-ranging domestic cats are a detriment to wildlife and humans by preying on 
 - site_covs.csv: Land cover and US Census data associated with study sites
 - transect_detections.csv: Count data from transect sampling
 - transect_weather.csv: Weather data associated with transect sampling (<i>Note: All weather data were obtained from Weather Underground using the nearest weather station to a given site</i>)
+
+### ~/output
+- models: abundance models
+- figures: Figures 1 - 5 from the manuscript
   
 ### ~/scripts
 - setup.R: Functions used across analyses
