@@ -7,7 +7,7 @@ smartLibrary(
 
 # Prepare camera data:
 
-source('scripts/prepare_data.R')
+source('scripts/preparation/prepare_data.R')
 
 # camera null model fitting ---------------------------------------------
 

@@ -4,7 +4,7 @@ options(stringsAsFactors = FALSE)
 
 source('scripts/setup.R')
 
-source('scripts/prepare_data.R')
+source('scripts/preparation/prepare_data.R')
 
 
 # get model output and site covs ------------------------------------------

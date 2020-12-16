@@ -4,7 +4,7 @@ source('scripts/setup.R')
 
 smartLibrary(c('unmarked', 'AICcmodavg', 'MuMIn', 'tidyverse'))
 
-source('scripts/prepare_data.R')
+source('scripts/preparation/prepare_data.R')
 
 # probability density function --------------------------------------------
 
