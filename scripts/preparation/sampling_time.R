@@ -5,7 +5,7 @@ library(tidyverse)
 # Get sites:
 
 catSites <-
-  read_csv('data/siteCovs.csv') %>%
+  read_csv('data/site_covs.csv') %>%
   arrange(site) %>%
   select(site)
 
