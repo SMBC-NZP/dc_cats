@@ -117,8 +117,13 @@ census_spatial <-
 
 # Get survey locations:
 
+# Please note that this code reads a three column data frame where column
+# one is the site name and columns two and three are the longitude and
+# latitude (decimal degrees), respectively. Location data have been
+# masked to avoid sharing PII.
+
 survey_sites <-
-  read_csv('data/raw_data/sites.csv') %>%
+  read_csv('site_locations.csv') %>%
   SpatialPointsDataFrame(
     .[, 2:3],
     data = .,

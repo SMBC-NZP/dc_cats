@@ -82,9 +82,9 @@ observations_transect <-
     doy = as.numeric(strftime(date, format = '%j'))) %>%
   arrange(site)
 
-# Create an unmarked frame of distance data for the transect counts:
+# Create formatted distance data for the transect counts:
 
-umf_transect <- 
+transect_observations <- 
   formatDistData(
     data.frame(observations_transect), 
     distCol="distance",
@@ -99,7 +99,7 @@ transect_observation_covs <-
   dplyr::select(-c(species:date)) %>%
   mutate(time = as.numeric(time)/60) %>%
   distinct %>%
-  mutate_at(yCov_names, scaleVar)
+  mutate_at(vars(time:temp), ~scaleVar(.))
 
 # Create a list of wide-form detection covariates:
 
@@ -109,7 +109,6 @@ ySiteCovs <-
     function(covariate) {
       transect_observation_covs %>%
         select(site, visit, cov = covariate) %>%
-        mutate(cov = scaleVar(cov)) %>%
         spread(visit, cov) %>%
         select(-site) %>%
         as.matrix()
@@ -120,7 +119,7 @@ ySiteCovs <-
 
 umf_transect <-
   unmarkedFrameGDS(
-    y = as.matrix(catTransectUmf),
+    y = as.matrix(transect_observations),
     siteCovs =  covs_transect %>%
       select(-site) %>%
       data.frame(),
@@ -128,5 +127,5 @@ umf_transect <-
     yearlySiteCovs = ySiteCovs,
     survey = 'line',
     dist.breaks =  seq(0, 50, by = 5),
-    tlength = rep(200, nrow(catTransectUmf)),
+    tlength = rep(200, nrow(transect_observations)),
     unitsIn = 'm')
